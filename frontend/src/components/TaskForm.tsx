@@ -1,5 +1,4 @@
 import React from 'react'
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Plus } from 'lucide-react'
 import { Label } from '@/components/ui/label'
@@ -68,7 +67,7 @@ const addNewTask = useCallback(() => {
    
             <Button
           variant="default"
-          className="bg-blue-500 hover:bg-blue-600 text-white"
+          className="bg-primary hover:bg-accent-foreground text-white"
           onClick={() => setIsDialogOpen(true)}
         >
           <Plus className="h-4 w-4" />

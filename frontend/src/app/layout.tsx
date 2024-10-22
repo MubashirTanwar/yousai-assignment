@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.className} antialiased`}
+        className={`${montserrat.className} antialiased flex items-center justify-center min-h-screen bg-secondary/50`} 
       >
         {children}
       </body>

@@ -27,7 +27,7 @@ function Filters({
         placeholder="Search tasks..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="max-w-xs"
+        className="max-w-xs bg-white"
       />
       <div className={selectWrapperClass}>
         <select

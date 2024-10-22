@@ -1,6 +1,5 @@
 import React from "react";
 import { Edit2, Trash2, Calendar, Clock } from "lucide-react";
-import { priorityColors, priorityIcons } from "@/lib/colors";
 import { formatDueDate } from "@/lib/utils";
 import {
   Tooltip,
@@ -8,7 +7,20 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { AlertCircle } from 'lucide-react'
 
+
+export const priorityColors: Record<string, string> = {
+  high: 'bg-red-50 hover:bg-red-100 border-red-200',
+  medium: 'bg-yellow-50 hover:bg-yellow-100 border-yellow-200',
+  low: 'bg-green-50 hover:bg-green-100 border-green-200',
+}
+
+export const priorityIcons: Record<string, React.ReactNode> = {
+  high: <AlertCircle className="w-4 h-4 text-red-500" />,
+  medium: <Clock className="w-4 h-4 text-yellow-500" />,
+  low: <Clock className="w-4 h-4 text-green-500" />,
+}
 
 function Content({
     task,
@@ -36,7 +48,6 @@ function Content({
     >
       <div className="flex items-center justify-between">
         <div className="flex-grow">
-          <p className="font-medium text-gray-800">{task.content}</p>
           <div className="flex items-center justify-between">
             <div className="flex-grow">
               <p className="font-medium text-gray-800">{task.content}</p>
