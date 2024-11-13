@@ -74,12 +74,12 @@ export default function Body({
         {Object.entries(filteredTasks()).map(([columnId, columnTasks]) => (
           <div
             key={columnId}
-            className={`bg-white rounded-lg shadow-md overflow-hidden ${
+            className={`bg-white rounded-2xl shadow-md overflow-hidden ${
               columnId === "todo"
-                ? "border-t-4 border-red-500"
+                ? "border-y-4 border-red-700"
                 : columnId === "inProgress"
-                ? "border-t-4 border-yellow-500"
-                : "border-t-4 border-green-500"
+                ? "border-y-4 border-yellow-700"
+                : "border-y-4 border-green-700"
             }`}
           >
             <div className="p-4">
@@ -97,7 +97,13 @@ export default function Body({
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2.5">
                 <div
-                  className="bg-primary h-2.5 rounded-full"
+                  className={`h-2.5 rounded-full ${
+                    columnId === "todo"
+                      ? "bg-red-700"
+                      : columnId === "inProgress"
+                      ? "bg-yellow-700"
+                      : "bg-green-700"
+                  }`}
                   style={{ width: `${calculateProgress(columnTasks)}%` }}
                 ></div>
               </div>
